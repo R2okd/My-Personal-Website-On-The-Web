@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="refresh" content="10"/>
+		<!--<meta http-equiv="refresh" content="10"/>-->
 		<meta name="description" content="My Personal Website r2okd">
   		<meta name="keywords" content="HTML, CSS, JavaScript, Personal Website">
   		<meta name="author" content="John Benedict Tangaro r2okd">
@@ -19,6 +19,56 @@
 		<link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Golos+Text&display=swap" rel="stylesheet">
 		<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+		<script>
+			var num1, num2, result;
+
+			function add(){
+				num1 = parseInt(document.getElementById("firstnumber").value);
+				num2 = parseInt(document.getElementById("secondnumber").value);
+				result = num1 + num2;
+				document.getElementById("answer").value = result;}
+			function min(){
+				num1 = parseInt(document.getElementById("firstnumber").value);
+				num2 = parseInt(document.getElementById("secondnumber").value);
+				result = num1 - num2;
+				document.getElementById("answer").value = result;}
+			function mul(){
+				num1 = parseInt(document.getElementById("firstnumber").value);
+				num2 = parseInt(document.getElementById("secondnumber").value);
+				result = num1 * num2;
+				document.getElementById("answer").value = result;}
+			function div(){
+				num1 = parseInt(document.getElementById("firstnumber").value);
+				num2 = parseInt(document.getElementById("secondnumber").value);
+				result = num1 / num2;
+				document.getElementById("answer").value = result;}
+			
+			const nums = [];
+			const store = 0;
+			const nresult = 0;
+			var n = 0;
+
+			//reset numbers
+			function reset(){n=0;}
+
+			//accepting numbers
+			function addNum(){
+				nums[n] = parseInt(document.getElementById("numbers").value);
+				n++;
+			}
+
+			function add(){
+				for(let i = 2; i < n; i++){
+					num[i] == store;
+					num[i+1] + store == nresult;
+					store == 0
+				}
+			}
+
+
+		</script>
+
 	</head>
 	<body>
 		<div class="topcontainer">
@@ -105,6 +155,18 @@
 					<img width="30px" src="https://img.icons8.com/fluency/256/facebook-new.png" alt="" style="float: left;margin-right: 10px;">
 					<p style="font-size: 20px;font-weight: bold;"><a href="https://www.facebook.com/johnbenedict.tangaro.5/" target="_blank">Facebook Account: John Benedict Tangaro</a></p>
 				</div>
+				<div class="card">
+					<p style="font-family: 'Gloock', serif; font-size: 1vw; font-weight: 600;"><a name="Socials">Calculator</a></p>
+					<p style="font-size: 20px;font-weight: bold;">Numbers: <input id="numbers"></p>
+					<button id="op" onclick="add()">+</button>
+					<button id="op" onclick="min()">-</button>
+					<button id="op" onclick="mul()">x</button>
+					<button id="op" onclick="div()">÷</button>
+					<button id="op" onclick="div()">=</button>
+					<button id="op" onclick="div()">Add Number</button>
+					<button id="op" onclick="div()">Reset</button>
+					<p style="font-size: 20px;font-weight: bold;">Result: <input id="answer"></p>
+				</div>
 			</div>
 		</div>
 
@@ -130,6 +192,6 @@
 			<h2>All Rights Reserved</h2>
 			<p>Copyright 2022</p>
 		</div>
-		
+
 	</body>
 </html>
