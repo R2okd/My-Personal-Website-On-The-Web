@@ -57,15 +57,20 @@
 				nums[n] = parseInt(document.getElementById("numbers").value);
 				n++;
 			}
-
+			
+			//add the numbers
 			function add(){
+				num[0] + num[1] == store;
 				for(let i = 2; i < n; i++){
-					num[i] == store;
-					num[i+1] + store == nresult;
-					store == 0
+					store + num[i] == store;
 				}
+				store == nresult;
 			}
-
+			
+			//result
+			function equals(){
+				document.getElementById("answer").value = nresult;
+			}
 
 		</script>
 
@@ -162,9 +167,9 @@
 					<button id="op" onclick="min()">-</button>
 					<button id="op" onclick="mul()">x</button>
 					<button id="op" onclick="div()">÷</button>
-					<button id="op" onclick="div()">=</button>
-					<button id="op" onclick="div()">Add Number</button>
-					<button id="op" onclick="div()">Reset</button>
+					<button id="op" onclick="equals()">=</button>
+					<button id="op" onclick="addNum()">Add Number</button>
+					<button id="op" onclick="reset()">Reset</button>
 					<p style="font-size: 20px;font-weight: bold;">Result: <input id="answer"></p>
 				</div>
 			</div>
