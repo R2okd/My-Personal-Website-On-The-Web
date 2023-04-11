@@ -354,3 +354,19 @@ body {
 		width: 30%;
 	}
 }
+
+.card #op{
+	background-color: #7fa2b1; /* Green */
+	border: none;
+	color: white;
+	padding: 5px 15px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+#op:active{
+	background-color: #607e8b; /* Green */
+}
