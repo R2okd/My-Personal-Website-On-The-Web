@@ -21,27 +21,106 @@
 		<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
 		<script>
-			const nums = [];
-			const store = 0;
-			const nresult = 0;
+			var nums = [];
+			var store = 0;
+			var nresult = 0;
 			var n = 0;
-
-			//reset numbers
-			function reset(){n=0;}
 
 			//accepting numbers
 			function addNum(){
 				nums[n] = parseInt(document.getElementById("numbers").value);
+				console.log(`Num ${n} = ${nums[n]}`);
 				n++;
+			}
+
+			//reset numbers
+			function reset(){
+				for (let i = 0; i <= n; i++){
+					nums.splice(i, 1, 0);
+				}
+				for (let i = 0; i <= n; i++){
+					console.log(`reset num ${n} = ${nums[i]}`);
+				}
+				n = 0;
+				document.getElementById("operation").innerHTML = "";
+				document.getElementById("answer").value = "";
+				document.getElementById("numbers").value = "";
 			}
 			
 			//add the numbers
 			function add(){
-				nums[0] + nums[1] == store;
-				for(let i = 2; i < n; i++){
-					store + nums[i] == store;
+				store = nums[0] + nums[1];
+				console.log(`store = ${store} and n = ${n}`);
+				for (let i = 2; i < n; i++){
+					store = store + nums[i];
+					console.log(`store in loop = ${store}`);
 				}
-				store == nresult;
+				nresult = store;
+				console.log(`nresult = ${nresult}`);
+
+				document.getElementById("operation").innerHTML = nums[0];
+
+				for (let i = 1; i < n; i++){
+					let operation = "+" + nums[i];
+					document.getElementById("operation").innerHTML += operation;
+				}
+			}
+
+			//subtract the numbers
+			function min(){
+				store = nums[0] - nums[1];
+				console.log(`store = ${store} and n = ${n}`);
+				for (let i = 2; i < n; i++){
+					store = store - nums[i];
+					console.log(`store in loop = ${store}`);
+				}
+				nresult = store;
+				console.log(`nresult = ${nresult}`);
+
+				document.getElementById("operation").innerHTML = nums[0];
+
+				for (let i = 1; i < n; i++){
+					let operation = "-" + nums[i];
+					document.getElementById("operation").innerHTML += operation;
+				}
+			}
+
+			//multiply the numbers
+			function mul(){
+				store = nums[0] * nums[1];
+				console.log(`store = ${store} and n = ${n}`);
+				for (let i = 2; i < n; i++){
+					store = store * nums[i];
+					console.log(`store in loop = ${store}`);
+				}
+				nresult = store;
+				console.log(`nresult = ${nresult}`);
+
+				document.getElementById("operation").innerHTML = nums[0];
+
+				for (let i = 1; i < n; i++){
+					let operation = "*" + nums[i];
+					document.getElementById("operation").innerHTML += operation;
+				}
+			}
+
+			//divide the numbers
+			function div(){
+				store = nums[0] / nums[1];
+				console.log(`store = ${store} and n = ${n}`);
+				for (let i = 2; i < n; i++){
+					store = store / nums[i];
+					console.log(`store in loop = ${store}`);
+				}
+				nresult = store;
+				console.log(`nresult = ${nresult}`);
+
+				document.getElementById("operation").innerHTML = nums[0];
+
+				for (let i = 1; i < n; i++){
+					let operation = "÷" + nums[i];
+					document.getElementById("operation").innerHTML += operation;
+				}
 			}
 			
 			//result
@@ -147,6 +226,7 @@
 					<button id="op" onclick="equals()">=</button>
 					<button id="op" onclick="addNum()">Add Number</button>
 					<button id="op" onclick="reset()">Reset</button>
+					<p id="operation"></p>
 					<p style="font-size: 20px;font-weight: bold;">Result: <input id="answer"></p>
 				</div>
 			</div>
