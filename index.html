@@ -30,6 +30,7 @@
 			function addNum(){
 				nums[n] = parseInt(document.getElementById("numbers").value);
 				console.log(`Num ${n} = ${nums[n]}`);
+				document.getElementById("sequence").innerHTML += nums[n] + ", ";
 				n++;
 			}
 
@@ -45,6 +46,7 @@
 				document.getElementById("operation").innerHTML = "";
 				document.getElementById("answer").value = "";
 				document.getElementById("numbers").value = "";
+				document.getElementById("sequence").innerHTML = "";
 			}
 			
 			//add the numbers
@@ -219,6 +221,7 @@
 				<div class="card">
 					<p style="font-family: 'Gloock', serif; font-size: 1vw; font-weight: 600;"><a name="Socials">Calculator</a></p>
 					<p style="font-size: 20px;font-weight: bold;">Numbers: <input id="numbers"></p>
+					<p id="sequence"></p>
 					<button id="op" onclick="add()">+</button>
 					<button id="op" onclick="min()">-</button>
 					<button id="op" onclick="mul()">x</button>
